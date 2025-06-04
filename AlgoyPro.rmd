@@ -1,0 +1,5 @@
+library(ggplot2)
+
+datos <- read.csv("Precios.csv")
+
+g <- ggplot
