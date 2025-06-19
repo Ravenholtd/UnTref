@@ -1,4 +1,4 @@
-# Ejemplo de uso de plot, pairs, summary y abline en R
+# Ejemplo de uso de plot, pairs, summary, abline, predict y confint en R
 
 # Usamos el dataset integrado 'iris'
 data(iris)
@@ -23,5 +23,26 @@ summary(iris)
 # La función abline() se utiliza para agregar líneas a un gráfico existente.
 # Cuando se le pasa un modelo lineal (como el resultado de lm), abline dibuja la recta de regresión correspondiente.
 # También se puede usar para agregar líneas horizontales, verticales o con pendiente/intersección específicas.
+
+# Uso de predict()
+# La función predict() se utiliza para obtener valores predichos a partir de un modelo ajustado.
+# Por ejemplo, podemos predecir el valor de Petal.Length para un nuevo valor de Sepal.Length:
+nuevo <- data.frame(Sepal.Length = c(5, 6, 7))
+predicciones <- predict(modelo, nuevo)
+print(predicciones)
+
+# Explicación de predict():
+# predict(modelo, nuevo) devuelve los valores estimados de la variable dependiente (Petal.Length)
+# para los valores de Sepal.Length especificados en el data frame 'nuevo', usando el modelo ajustado.
+
+# Uso de confint()
+# La función confint() calcula los intervalos de confianza para los parámetros del modelo.
+intervalos <- confint(modelo)
+print(intervalos)
+
+# Explicación de confint():
+# confint(modelo) devuelve los intervalos de confianza (por defecto al 95%) para los coeficientes del modelo lineal.
+# Esto permite conocer el rango en el que probablemente se encuentran los valores verdaderos de los
+# parámetros del modelo.
 
 
