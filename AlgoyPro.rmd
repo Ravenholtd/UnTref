@@ -46,3 +46,11 @@ print(intervalos)
 # parámetros del modelo.
 
 
+```{r}
+Gastos <- c(100, 200, 300, 400, 500)
+ingresos <- c(150, 250, 350, 450, 550)
+datos <- data.frame(Gastos, ingresos)
+reg_linear <- lm(ingresos ~ Gastos, data = datos)
+summary(reg_linear)
+
+```
